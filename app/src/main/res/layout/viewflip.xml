@@ -1,0 +1,32 @@
+<ViewFlipper android:id="@+id/viewFlipper"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.example.newseditorial.news_details"
+    tools:showIn="@layout/activity_news_details"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:fitsSystemWindows="true"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+
+
+    <include layout="@layout/content_news_details" />
+
+    <RelativeLayout
+        android:fitsSystemWindows="true"
+        android:layout_width="match_parent"
+        android:id="@+id/some"
+        android:layout_height="wrap_content"
+        android:background="@drawable/editextstyle"
+        android:padding="2dp"
+
+        >
+        <include layout="@layout/content_web_news" />
+    </RelativeLayout>
+
+
+
+
+</ViewFlipper>

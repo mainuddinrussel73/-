@@ -1,0 +1,590 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/baselayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bbb"
+    >
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/sssss"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/activity_horizontal_margin"
+        app:cardCornerRadius="25dp"
+        app:cardElevation="3dp"
+        >
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/cardview_light_background"
+            app:popupTheme="@style/AppTheme">
+
+
+        </androidx.appcompat.widget.Toolbar>
+
+    </androidx.cardview.widget.CardView>
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@+id/sssss"
+        android:layout_margin="@dimen/activity_horizontal_margin">
+        <RelativeLayout
+            android:id="@+id/newsoptions"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+
+
+            android:background="@drawable/card_background">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_marginTop="26dp"
+                android:layout_marginRight="@dimen/activity_horizontal_margin"
+                android:layout_marginBottom="26dp"
+                android:fontFamily="@font/lilita_regular"
+                android:gravity="center"
+                android:text="Bengali News Papers"
+                android:textAlignment="center"
+                android:textColor="@color/uou"
+                android:textSize="20dp">
+
+            </TextView>
+
+
+
+            <LinearLayout
+                android:id="@+id/first"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="69dp"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_marginRight="@dimen/activity_horizontal_margin"
+                android:orientation="horizontal">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/prothomalo"
+                    android:layout_width="match_parent"
+                    android:layout_height="140dp"
+                    android:layout_margin="10dp"
+                    app:cardBackgroundColor="#FF5733"
+                    android:padding="3dp"
+                    app:cardCornerRadius="5dp"
+                    android:layout_weight="0.5"
+                    >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="প্রথম আলো"
+                        android:textColor="@color/white"
+                        android:fontFamily="@font/lobs_star"
+                        android:textSize="22sp"
+                        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                        android:layout_marginTop="60dp"
+                        >
+
+                    </TextView>
+
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/itterfaq"
+                    android:layout_width="match_parent"
+                    android:layout_height="140dp"
+                    android:layout_margin="10dp"
+                    app:cardBackgroundColor="@color/bbb"
+                    android:padding="3dp"
+                    app:cardCornerRadius="5dp"
+                    android:layout_weight="0.5"
+                    >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="ইত্তেফাক"
+                        android:textColor="@color/white"
+                        android:fontFamily="@font/lobs_star"
+                        android:textSize="22sp"
+                        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                        android:layout_marginTop="60dp"
+                        >
+
+                    </TextView>
+
+
+                </androidx.cardview.widget.CardView>
+
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/secound"
+                android:layout_below="@+id/first"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_marginRight="@dimen/activity_horizontal_margin"
+                android:orientation="horizontal">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/jugantor"
+                    android:layout_width="match_parent"
+                    android:layout_height="140dp"
+                    android:layout_margin="10dp"
+                    app:cardBackgroundColor="#3E3D3C"
+                    android:padding="3dp"
+                    app:cardCornerRadius="5dp"
+                    android:layout_weight="0.5"
+                    >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="যুগান্তর"
+                        android:textColor="@color/white"
+                        android:fontFamily="@font/lobs_star"
+                        android:textSize="22sp"
+                        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                        android:layout_marginTop="60dp"
+                        >
+
+                    </TextView>
+
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/kalerkantho"
+                    android:layout_width="match_parent"
+                    android:layout_height="140dp"
+                    android:layout_margin="10dp"
+                    app:cardBackgroundColor="#17B7DE"
+                    android:padding="3dp"
+                    app:cardCornerRadius="5dp"
+                    android:layout_weight="0.5"
+                    >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="কালের কণ্ঠ"
+                        android:textColor="@color/white"
+                        android:fontFamily="@font/lobs_star"
+                        android:textSize="22sp"
+                        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                        android:layout_marginTop="60dp"
+                        >
+
+                    </TextView>
+
+
+                </androidx.cardview.widget.CardView>
+
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/third"
+                android:layout_below="@+id/secound"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_marginRight="@dimen/activity_horizontal_margin"
+                android:orientation="horizontal">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/inquilab"
+                    android:layout_width="match_parent"
+                    android:layout_height="140dp"
+                    android:layout_margin="10dp"
+                    app:cardBackgroundColor="#17DE26"
+                    android:padding="3dp"
+                    app:cardCornerRadius="5dp"
+                    android:layout_weight="0.5"
+                    >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="ইনকিলাব"
+                        android:textColor="@color/bbb"
+                        android:fontFamily="@font/lobs_star"
+                        android:textSize="22sp"
+                        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                        android:layout_marginTop="60dp"
+                        >
+
+                    </TextView>
+
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/janakantho"
+                    android:layout_width="match_parent"
+                    android:layout_height="140dp"
+                    android:layout_margin="10dp"
+                    app:cardBackgroundColor="#74310E"
+                    android:padding="3dp"
+                    app:cardCornerRadius="5dp"
+                    android:layout_weight="0.5"
+                    >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="জনকন্ঠ"
+                        android:textColor="@color/white"
+                        android:fontFamily="@font/lobs_star"
+                        android:textSize="22sp"
+                        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                        android:layout_marginTop="60dp"
+                        >
+
+                    </TextView>
+
+
+                </androidx.cardview.widget.CardView>
+
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/four"
+                android:layout_below="@+id/third"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_marginRight="@dimen/activity_horizontal_margin"
+                android:orientation="horizontal">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/nayadiganta"
+                    android:layout_width="match_parent"
+                    android:layout_height="140dp"
+                    android:layout_margin="10dp"
+                    app:cardBackgroundColor="#FAEF43"
+                    android:padding="3dp"
+                    app:cardCornerRadius="5dp"
+                    android:layout_weight="0.5"
+                    >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="নয়াদিগন্ত"
+                        android:textColor="@color/bbb"
+                        android:fontFamily="@font/lobs_star"
+                        android:textSize="22sp"
+                        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                        android:layout_marginTop="60dp"
+                        >
+
+                    </TextView>
+
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/bdpratidin"
+                    android:layout_width="match_parent"
+                    android:layout_height="140dp"
+                    android:layout_margin="10dp"
+                    app:cardBackgroundColor="#43FAC8"
+                    android:padding="3dp"
+                    app:cardCornerRadius="5dp"
+                    android:layout_weight="0.5"
+                    >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="বাংলাদেশ প্রতিদিন"
+                        android:textColor="@color/bbb"
+                        android:fontFamily="@font/lobs_star"
+                        android:textSize="20sp"
+                        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                        android:layout_marginTop="60dp"
+                        >
+
+                    </TextView>
+
+
+                </androidx.cardview.widget.CardView>
+
+
+
+            </LinearLayout>
+
+
+
+            <View
+                android:id="@+id/line2"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/four"
+                android:layout_marginTop="26dp"
+                android:layout_marginBottom="26dp"
+                android:background="@android:color/darker_gray"
+                />
+
+            <TextView
+                android:id="@+id/t1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/line2"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="@dimen/activity_horizontal_margin"
+                android:fontFamily="@font/lilita_regular"
+                android:gravity="center"
+                android:text="English News Papers"
+                android:textAlignment="center"
+                android:textColor="@color/uou"
+                android:textSize="20dp">
+
+            </TextView>
+            <LinearLayout
+                android:id="@+id/five"
+                android:layout_below="@+id/t1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_marginRight="@dimen/activity_horizontal_margin"
+                android:orientation="horizontal">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/dailystar"
+                    android:layout_width="match_parent"
+                    android:layout_height="140dp"
+                    android:layout_margin="10dp"
+                    app:cardBackgroundColor="#DAE3E1"
+                    android:padding="3dp"
+                    app:cardCornerRadius="5dp"
+                    android:layout_weight="0.5"
+                    >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Daily Star"
+                        android:textColor="@color/bbb"
+                        android:fontFamily="@font/lobs_star"
+                        android:textSize="22sp"
+                        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                        android:layout_marginTop="60dp"
+                        >
+
+                    </TextView>
+
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/dailysun"
+                    android:layout_width="match_parent"
+                    android:layout_height="140dp"
+                    android:layout_margin="10dp"
+                    app:cardBackgroundColor="#FF5733"
+                    android:padding="3dp"
+                    app:cardCornerRadius="5dp"
+                    android:layout_weight="0.5"
+                    >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Daily Sun"
+                        android:textColor="@color/white"
+                        android:fontFamily="@font/lobs_star"
+                        android:textSize="20sp"
+                        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                        android:layout_marginTop="60dp"
+                        >
+
+                    </TextView>
+
+
+                </androidx.cardview.widget.CardView>
+
+
+
+            </LinearLayout>
+
+
+
+            <View
+                android:id="@id/line3"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/five"
+                android:layout_marginTop="26dp"
+                android:layout_marginBottom="26dp"
+                android:background="@android:color/darker_gray"
+                />
+
+            <TextView
+                android:id="@+id/t2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/line3"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="@dimen/activity_horizontal_margin"
+                android:fontFamily="@font/lilita_regular"
+                android:gravity="center"
+                android:text="International News Papers"
+                android:textAlignment="center"
+                android:textColor="@color/uou"
+                android:textSize="20dp">
+
+            </TextView>
+
+            <LinearLayout
+                android:id="@+id/six"
+                android:layout_below="@+id/t2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_marginRight="@dimen/activity_horizontal_margin"
+                android:orientation="horizontal">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/aljazeera"
+                    android:layout_width="match_parent"
+                    android:layout_height="140dp"
+                    android:layout_margin="10dp"
+                    app:cardBackgroundColor="#FBAC0D"
+                    android:padding="3dp"
+                    app:cardCornerRadius="5dp"
+                    android:layout_weight="0.5"
+                    >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Aljazeera"
+                        android:textColor="@color/white"
+                        android:fontFamily="@font/lobs_star"
+                        android:textSize="22sp"
+                        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                        android:layout_marginTop="60dp"
+                        >
+
+                    </TextView>
+
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/foreignpolicy"
+                    android:layout_width="match_parent"
+                    android:layout_height="140dp"
+                    android:layout_margin="10dp"
+                    app:cardBackgroundColor="#FB3C0D"
+                    android:padding="3dp"
+                    app:cardCornerRadius="5dp"
+                    android:layout_weight="0.5"
+                    >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Foreign Policy"
+                        android:textColor="@color/white"
+                        android:fontFamily="@font/lobs_star"
+                        android:textSize="20sp"
+                        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                        android:layout_marginTop="60dp"
+                        >
+
+                    </TextView>
+
+
+                </androidx.cardview.widget.CardView>
+
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/seven"
+                android:layout_below="@+id/six"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_marginRight="@dimen/activity_horizontal_margin"
+                android:orientation="horizontal">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/washpost"
+                    android:layout_width="match_parent"
+                    android:layout_height="140dp"
+                    android:layout_margin="10dp"
+                    app:cardBackgroundColor="#EAE2E0"
+                    android:padding="3dp"
+                    app:cardCornerRadius="5dp"
+                    android:layout_weight="0.5"
+                    >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Washington Post"
+                        android:textColor="@color/bbb"
+                        android:fontFamily="@font/lobs_star"
+                        android:textSize="22sp"
+                        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                        android:layout_marginTop="60dp"
+                        >
+
+                    </TextView>
+
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/scmpost"
+                    android:layout_width="match_parent"
+                    android:layout_height="140dp"
+                    android:layout_margin="10dp"
+                    app:cardBackgroundColor="#EBFC19"
+                    android:padding="3dp"
+                    app:cardCornerRadius="5dp"
+                    android:layout_weight="0.5"
+                    >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="South China Morning Post"
+                        android:textColor="@color/bbb"
+                        android:fontFamily="@font/lobs_star"
+                        android:textSize="20sp"
+                        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                        android:layout_marginTop="60dp"
+                        >
+
+                    </TextView>
+
+
+                </androidx.cardview.widget.CardView>
+
+
+
+            </LinearLayout>
+
+
+
+        </RelativeLayout>
+    </ScrollView>
+
+
+</RelativeLayout>

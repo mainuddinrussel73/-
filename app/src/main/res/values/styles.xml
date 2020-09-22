@@ -1,0 +1,89 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowActionBarOverlay">true</item>
+        <item name="android:scrollbarThumbVertical">@drawable/back_scrollbar</item>
+
+    </style>
+
+    <style name="WindowAnimationTransition">
+        <item name="android:windowEnterAnimation">@android:anim/fade_in</item>
+        <item name="android:windowExitAnimation">@android:anim/fade_out</item>
+        <item name="android:windowActionBarOverlay">true</item>
+    </style>
+
+
+    <style name="YOURSTYLE" parent="Widget.AppCompat.PopupMenu">
+        <item name="android:textColor">@color/cardview_light_background</item>
+        <item name="android:colorBackground">@android:color/background_dark</item>
+        <item name="android:itemBackground">@android:color/background_dark</item>
+        <item name="android:listDivider">@android:color/background_dark</item>
+    </style>
+
+    <style name="Name" parent="Widget.AppCompat.ListView.Menu">
+        <item name="android:textColor">@color/cardview_light_background</item>
+        <item name="android:colorBackground">@android:color/background_dark</item>
+        <item name="android:itemBackground">@android:color/background_dark</item>
+        <item name="android:listDivider">@android:color/background_dark</item>
+    </style>
+
+    <style name="YOURSTYLE1" parent="Widget.AppCompat.PopupMenu">
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:itemBackground">@android:color/background_light</item>
+        <item name="android:popupBackground">@android:color/background_light</item>
+        <item name="android:listDivider">@android:color/background_light</item>
+    </style>
+
+    <style name="DialogurDark" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="colorAccent">#3a9ebe</item>
+        <item name="android:textColorPrimary">@android:color/background_light</item>
+        <item name="android:textColor">@android:color/background_light</item>
+        <item name="textColorAlertDialogListItem">@android:color/background_light</item>
+        <item name="android:background">@android:color/black</item>
+    </style>
+
+    <style name="DialogueLight" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="colorAccent">#3a9ebe</item>
+        <item name="android:textColorPrimary">@android:color/black</item>
+        <item name="textColorAlertDialogListItem">@android:color/black</item>
+        <item name="android:textColor">@android:color/background_dark</item>
+        <item name="android:background">@android:color/background_light</item>
+    </style>
+
+    <style name="DialogurDark1" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="colorAccent">#3a9ebe</item>
+        <item name="android:textColorPrimary">@android:color/background_light</item>
+        <item name="android:background">@android:color/black</item>
+    </style>
+
+    <style name="DialogueLight1" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="colorAccent">#3a9ebe</item>
+        <item name="android:textColorPrimary">@android:color/black</item>
+        <item name="android:background">@android:color/background_light</item>
+    </style>
+    <style name="LoginTextInputLayoutStyle" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+        <item name="boxStrokeColor">#3a9dbe</item>
+        <item name="boxStrokeWidth">2dp</item>
+    </style>
+    <style name="MyA" parent="@android:style/Animation.Activity">
+        <item name="android:windowEnterAnimation">@anim/anim_in</item>
+        <item name="android:windowExitAnimation">@anim/anim_out</item>
+    </style>
+
+    <style name="TextLabel" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <item name="android:textColorHint">#2a4b5c</item>
+        <item name="android:textSize">20sp</item>
+        <item name="colorControlNormal">@color/bbb</item>
+        <item name="colorControlActivated">@color/colorPrimary</item>
+    </style>
+
+</resources>

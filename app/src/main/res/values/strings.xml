@@ -1,0 +1,113 @@
+<resources>
+    <string name="app_name">News Editorial</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Quiz</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="menu_tools">DARK MODE</string>
+    <string name="menu_share">Backup And Restore</string>
+    <string name="menu_send">Backup Nad Restore</string>
+    <string name="title_activity_backup_restore">Backup and Restore Words</string>
+    <string name="Ok">Ok</string>
+    <string name="File">File</string>
+    <string name="restore">Restore</string>
+    <string name="restore1">Restore .html</string>
+    <string name="Backup">Backup</string>
+
+
+    <string name="question">Question</string>
+    <string name="next_questions">Next</string>
+    <string name="previous_questions">Previous Question</string>
+    <string name="btn_display">Display</string>
+    <string name="Score">Score</string>
+    <string name="exit">Exit</string>
+    <string name="title_activity_addpage">Add Word</string>
+    <string name="title_activity_word_details">Details</string>
+    <string name="title_quiz">Quiz</string>
+    <string name="darkmode">Dark Mode</string>
+    <string name="yes">Enable Dark Mode?</string>
+    <string name="no">Disable Dark Mode ?</string>
+    <string name="greet">Hi. How are you?</string>
+    <string name="subscribe">Subscribe</string>
+    <string name="title_activity_news">News Lists</string>
+    <string name="news">News</string>
+    <string name="title_add_news">Save News</string>
+    <string name="title_activity_news_details">News Details</string>
+    <string name="large_text">
+
+    </string>
+    <string name="update">Update</string>
+    <string name="delete">Delete</string>
+    <string name="update_news">Update News</string>
+    <string name="pdf">Save as PDF</string>
+    <string name="music">Music</string>
+    <string name="music_play">Music Player</string>
+
+    <string name="cd_repeat">Repeat one or all</string>
+    <string name="cd_previous">Skip backwards</string>
+    <string name="cd_play">Play and pause</string>
+    <string name="cd_next">Skip forwards</string>
+    <string name="static_shortcut_disabled_message">ok</string>
+    <string name="shortcut_long_label">Start a quiz to check your skills.</string>
+    <string name="shortcut_short_label">Quick quiz!</string>
+    <string name="shortcut_long_label1">Start a quiz to check your skills.</string>
+    <string name="shortcut_short_label1">Add Word!</string>
+    <string name="menu_back">News Backup and Restore</string>
+    <string name="title_activity_news_backup">Backup and Restore News</string>
+    <string name="Time">Time Remaining :</string>
+    <string name="result">Quiz result</string>
+    <string name="Promotodo">Promotodo</string>
+    <string name="promotodo">Promotodo</string>
+    <string name="extended_fab_content_desc">OK</string>
+    <string name="extended_fab_label">Ok</string>
+    <string name="Confirm">Quiz Confirm</string>
+    <string name="oll">Deadline</string>
+    <string name="Quizmatch">Quiz Match</string>
+    <string name="end">Finish</string>
+    <string name="deletethis">Confirm to delete.</string>
+    <string name="nn">Confirmation.</string>
+    <string name="copy">Copy</string>
+    <string name="Highlight">Highlight</string>
+    <string name="HighlightAll">Highlight All</string>
+    <string name="SelectionMode">Selection Mode</string>
+    <string name="UnSelectionMode">Close Selection Mode</string>
+    <string name="menu_pro">Promotodo Backup/Restore</string>
+    <string name="title_activity_backup_pro">Promotodo Backup</string>
+    <string name="menu_daily">Daily Backup</string>
+    <string name="done">Save</string>
+    <string name="image">Add Image</string>
+    <string name="title_activity_word_detail">WordDetail</string>
+    <string name="tab_text_1">Meaning</string>
+    <string name="tab_text_2">Sentences</string>
+    <string name="title_activity_daily">Daily Details</string>
+    <string name="action_daily">Daily Report</string>
+    <string name="Walk">Walk Through</string>
+    <string name="menu_dailyreport">Daily Report</string>
+    <string name="online">Editorial Online</string>
+    <string name="news_online_title">Editorial Online</string>
+    <string name="tree_activity">Tree Grow</string>
+    <string name="timeline_activity">TimeLine Of Tasks</string>
+    <string name="kllklkl">kllklkl</string>
+    <string name="alartme">Alart</string>
+    <string name="Alert">Alert List</string>
+    <string name="alert_notifi">Alert Notification</string>
+    <string name="edit">Alert Edit</string>
+    <string name="dairy">Daily Log</string>
+    <string name="add_dairy">Add Log</string>
+    <string name="update_log">Update Log</string>
+    <string name="diary">Daily Log</string>
+    <string name="dairy_voice">Voice Log</string>
+    <string name="dairy_voice_up">Update Voice Note</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_detail_album">detail_album</string>
+    <string name="menu_words">Words</string>
+    <string name="holder">One Direction (commonly abbreviated to 1D) is a UK-Irish boy group. The original 5-member group was made up of Liam Payne (born 29 August 1993) from Wolverhampton, Louis Tomlinson (born 24 December 1991) from Doncaster, Niall Horan (born 13th September 1993) from Mullingar, Westmeath, Ireland, Harry Styles, (born 1 February 1994) from Holmes Chapel, Cheshire and Zayn Malik, (born 12 January 1993) from East Bowling, Bradford: Zayn Malik announced he was to leave the group on March 25</string>
+</resources>

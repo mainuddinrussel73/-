@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/editlistview"
+    android:layout_width="match_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical">
+
+
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:id="@+id/shimmer_view_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:visibility="gone"
+        >
+
+        <!-- Adding 7 rows of placeholders -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingTop="80dp"
+            >
+
+            <include layout="@layout/placeholderforshimmer" />
+            <include layout="@layout/placeholderforshimmer" />
+            <include layout="@layout/placeholderforshimmer" />
+            <include layout="@layout/placeholderforshimmer" />
+            <include layout="@layout/placeholderforshimmer" />
+            <include layout="@layout/placeholderforshimmer" />
+            <include layout="@layout/placeholderforshimmer" />
+        </LinearLayout>
+
+    </com.facebook.shimmer.ShimmerFrameLayout>
+
+
+
+    <ListView
+        android:id="@+id/list"
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="?android:selectableItemBackground"
+        android:divider="@null"
+        android:dividerHeight="10dp"
+        android:clipToPadding= "false"
+        android:paddingTop="80dp"
+
+        android:fastScrollAlwaysVisible="true"
+
+        android:fastScrollEnabled="true"
+        >
+
+
+
+    </ListView>
+
+</LinearLayout>

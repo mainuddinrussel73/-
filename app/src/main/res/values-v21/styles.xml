@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="YOURSTYLE" parent="Widget.AppCompat.PopupMenu">
+        <item name="android:textColor">@color/cardview_light_background</item>
+        <item name="android:navigationBarColor">@android:color/background_dark</item>
+        <item name="android:colorBackground">@android:color/background_dark</item>
+        <item name="android:itemBackground">@android:color/background_dark</item>
+        <item name="android:listDivider">@android:color/background_dark</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowActionBarOverlay">true</item>
+        <item name="android:scrollbarThumbVertical">@drawable/back_scrollbar</item>
+        <item name="android:windowContentTransitions">true</item>
+
+    </style>
+</resources>
