@@ -1,5 +1,5 @@
-# দৈনিক সসম্পাদকীয়।  
-<img src="https://github.com/mainuddinrussel73/pomotodo/blob/master/ic_launcher_foreground.png" width="80">
+# দৈনিক সম্পাদকীয়।  
+<img src="https://github.com/mainuddinrussel73/-/blob/master/app/src/main/res/mipmap-xxxhdpi/ic_launcher_foreground.png" width="80">
 
 some demo image of this game is given below.
 
