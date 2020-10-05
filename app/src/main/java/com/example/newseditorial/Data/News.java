@@ -10,6 +10,27 @@ public class News extends ArrayList<News> implements Comparable<News> {
     String BODY;
     String URL;
 
+    @Override
+    public String toString() {
+        return "News{" +
+                "ID=" + ID +
+                ", TITLE='" + TITLE + '\'' +
+                ", URL='" + URL + '\'' +
+                ", LANG='" + LANG + '\'' +
+                ", ISREAD=" + ISREAD +
+                '}';
+    }
+
+    public String getLANG() {
+        return LANG;
+    }
+
+    public void setLANG(String LANG) {
+        this.LANG = LANG;
+    }
+
+    String LANG;
+
     public int getISREAD() {
         return ISREAD;
     }
@@ -20,11 +41,12 @@ public class News extends ArrayList<News> implements Comparable<News> {
 
     int ISREAD;
 
-    public News(int id, String title, String body,String url) {
+    public News(int id, String title, String body,String url,String lang) {
         this.ID = id;
         this.TITLE = title;
         this.URL = url;
         this.BODY = body;
+        this.LANG = lang;
 
     }
 

@@ -24,13 +24,16 @@ import android.renderscript.Element;
 import android.renderscript.RenderScript;
 import android.renderscript.ScriptIntrinsicBlur;
 import android.speech.tts.TextToSpeech;
+import android.speech.tts.UtteranceProgressListener;
 import android.text.Html;
 import android.text.Spannable;
+import android.text.SpannableString;
 import android.text.SpannableStringBuilder;
 import android.text.Spanned;
 import android.text.method.LinkMovementMethod;
 import android.text.style.BackgroundColorSpan;
 import android.text.style.CharacterStyle;
+import android.text.style.ForegroundColorSpan;
 import android.util.Log;
 import android.view.Display;
 import android.view.View;
@@ -76,6 +79,7 @@ import com.uttampanchasara.pdfgenerator.CreatePdf;
 import org.jetbrains.annotations.NotNull;
 import org.jsoup.nodes.Document;
 
+import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -87,7 +91,7 @@ import java.util.regex.Pattern;
 
 import es.dmoral.toasty.Toasty;
 
-public class news_details extends AppCompatActivity {
+public class news_details extends AppCompatActivity  implements  TextToSpeech.OnInitListener{
 
     private static final int TRANSLATE = 1;
     private static final String EXTRA_IS_CUSTOM = "is_custom_overflow_menu";
@@ -109,6 +113,8 @@ public class news_details extends AppCompatActivity {
     private boolean isCustomOverflowMenu;
     TextToSpeech t1;
     private DBNewsHelper mDBHelper;
+    public String[] textx =  new String[100];
+    int index = 0;
     private void makeEditable(boolean isEditable,EditText et){
         if(isEditable){
             // et.setBackgroundDrawable("Give the textbox background here");//You can store it in some variable and use it over here while making non editable.
@@ -638,6 +644,9 @@ public class news_details extends AppCompatActivity {
     @Override
     public void onDestroy(){
         super.onDestroy();
+        if(t1.isSpeaking()){
+            t1.shutdown();
+        }
     }
 
     public int getComplimentColor(int color) {
@@ -653,6 +662,56 @@ public class news_details extends AppCompatActivity {
         green = (~green) & 0xff;
 
         return Color.argb(alpha, red, green, blue);
+    }
+
+
+    @Override
+    public void onInit(int i) {
+        if(i != TextToSpeech.ERROR) {
+            t1.setLanguage(Locale.UK);
+            t1.setOnUtteranceProgressListener(new UtteranceProgressListener() {
+                @Override
+                public void onStart(String s) {
+                    System.out.println("start");
+
+                }
+
+                @Override
+                public void onDone(String s) {
+
+                    System.out.println("done");
+                    index++;
+                }
+
+                @Override
+                public void onError(String s) {
+
+                }
+                @Override
+                public void onRangeStart(String utteranceID,final int start,final int end, int frame){
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+
+                            webView.findAllAsync(textx[index].substring(start,end));
+                            System.out.println(start+","+end+","+index);
+
+
+                            try {
+                                Method m = WebView.class.getMethod("setFindIsUp",
+                                        Boolean.TYPE);
+                                m.invoke(webView, true);
+                            } catch (Exception ignored) {
+                            }
+
+
+                        }
+                    });
+                }
+            });
+
+        }
+
     }
 
     class RetrieveSaveTask extends AsyncTask<Void, Void, Void> {
@@ -690,6 +749,7 @@ public class news_details extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+        index = 0;
 
         // collapsingToolbarLayout.setTitle(itemTitle);
 
@@ -726,15 +786,7 @@ public class news_details extends AppCompatActivity {
         news_activityD = this;
 
 
-        t1=new TextToSpeech(getApplicationContext(), new TextToSpeech.OnInitListener() {
-            @Override
-            public void onInit(int status) {
-                if(status != TextToSpeech.ERROR) {
-                    t1.setLanguage(Locale.UK);
-
-                }
-            }
-        }, "com.google.android.tts");
+        t1=new TextToSpeech(this, this);
 
         try {
             // progressBar.setVisibility(View.VISIBLE);
@@ -1100,14 +1152,20 @@ public class news_details extends AppCompatActivity {
                                 Matcher reMatcher1 = re1.matcher(charSequence);
                                 /////
                                 int position=0 ;
+                                int o =0;
                                 int sizeOfChar= charSequence.length();
                                 String testStri= charSequence.substring(position,sizeOfChar);
-                                while(reMatcher.find()) {
+                                final Intent intent = getIntent();
+                                String type = intent.getStringExtra("lang");
+                                System.out.println(type);
+                                while(type.equals("ENG") && reMatcher.find()) {
                                     String temp="";
 
                                     try {
 
                                         temp = testStri.substring(charSequence.lastIndexOf(reMatcher.group()), charSequence.indexOf(reMatcher.group())+reMatcher.group().length());
+                                       textx[o] = temp;
+                                        o++;
                                         t1.speak(temp, TextToSpeech.QUEUE_ADD, null,"speak");
 
 
@@ -1119,12 +1177,14 @@ public class news_details extends AppCompatActivity {
                                     }
 
                                 }
-                                while(reMatcher1.find()) {
+                                while(type.equals("BAN") && reMatcher1.find()) {
                                     String temp="";
 
                                     try {
 
                                         temp = testStri.substring(charSequence.lastIndexOf(reMatcher1.group()), charSequence.indexOf(reMatcher1.group())+reMatcher1.group().length());
+                                        textx[o] = temp;
+                                        o++;
                                         t1.speak(temp, TextToSpeech.QUEUE_ADD, null,"speak");
 
 
@@ -1143,6 +1203,10 @@ public class news_details extends AppCompatActivity {
 
                                 fab.setVisibility(View.VISIBLE);
                                Snackbar.make(fab, "Done !", Snackbar.LENGTH_LONG).show();
+                                for (String s:
+                                        textx) {
+                                    System.out.println(s);
+                                }
                             }
                         })
                         .start();
@@ -1325,7 +1389,8 @@ public class news_details extends AppCompatActivity {
             news_details.setTextColor(Color.WHITE);
             relativeLayout.setBackgroundDrawable(ContextCompat.getDrawable(this, R.drawable.background_card_dark));
 
-        } else {
+        }
+        else {
 
 
             webView.getSettings().setJavaScriptEnabled(true);

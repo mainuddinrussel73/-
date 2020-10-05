@@ -84,7 +84,7 @@ public class News_online_fragment  extends Fragment {
 
         }
 
-        CardView p,i,in,k,ds,dsun,j,jo,ny,al,fp,wp,bdp;
+        CardView p,i,in,k,ds,dsun,j,jo,ny,al,fp,wp,bdp,sng,song,nyt;
 
         p = homeView.findViewById(R.id.prothomalo);
         i = homeView.findViewById(R.id.itterfaq);
@@ -93,6 +93,8 @@ public class News_online_fragment  extends Fragment {
         ny = homeView.findViewById(R.id.nayadiganta);
         j = homeView.findViewById(R.id.jugantor);
         jo = homeView.findViewById(R.id.janakantho);
+        sng = homeView.findViewById(R.id.songbad);
+        song = homeView.findViewById(R.id.songram);
 
         ds = homeView.findViewById(R.id.dailystar);
         dsun = homeView.findViewById(R.id.dailysun);
@@ -101,6 +103,7 @@ public class News_online_fragment  extends Fragment {
         fp = homeView.findViewById(R.id.foreignpolicy);
         wp = homeView.findViewById(R.id.washpost);
         bdp = homeView.findViewById(R.id.bdpratidin);
+        nyt = homeView.findViewById(R.id.nyt);
 
 
         p.setOnClickListener(new View.OnClickListener() {
@@ -118,6 +121,7 @@ public class News_online_fragment  extends Fragment {
                 Intent myIntent = new Intent(getContext(), news_online.class);
 
                 myIntent.putExtra("tag", "i");
+                myIntent.putExtra("lang", "BAN");
                 myIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivityForResult(myIntent, 0);
             }
@@ -129,6 +133,7 @@ public class News_online_fragment  extends Fragment {
                 Intent myIntent = new Intent(getContext(), news_online.class);
 
                 myIntent.putExtra("tag", "inquilab");
+                myIntent.putExtra("lang", "BAN");
                 myIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivityForResult(myIntent, 0);
             }
@@ -140,6 +145,7 @@ public class News_online_fragment  extends Fragment {
                 Intent myIntent = new Intent(getContext(), news_online.class);
 
                 myIntent.putExtra("tag", "kalerkantho");
+                myIntent.putExtra("lang", "BAN");
                 myIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivityForResult(myIntent, 0);
             }
@@ -151,6 +157,7 @@ public class News_online_fragment  extends Fragment {
                 Intent myIntent = new Intent(getContext(), news_online.class);
 
                 myIntent.putExtra("tag", "nayadiganta");
+                myIntent.putExtra("lang", "BAN");
                 myIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivityForResult(myIntent, 0);
             }
@@ -164,6 +171,7 @@ public class News_online_fragment  extends Fragment {
                 Intent myIntent = new Intent(getContext(), news_online.class);
 
                 myIntent.putExtra("tag", "jugantor");
+                myIntent.putExtra("lang", "BAN");
                 myIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivityForResult(myIntent, 0);
             }
@@ -176,10 +184,36 @@ public class News_online_fragment  extends Fragment {
                 Intent myIntent = new Intent(getContext(), news_online.class);
 
                 myIntent.putExtra("tag", "janakantho");
+                myIntent.putExtra("lang", "BAN");
                 myIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivityForResult(myIntent, 0);
             }
         });
+
+        sng.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent myIntent = new Intent(getContext(), news_online.class);
+
+                myIntent.putExtra("tag", "songbad");
+                myIntent.putExtra("lang", "BAN");
+                myIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivityForResult(myIntent, 0);
+            }
+        });
+        song.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent myIntent = new Intent(getContext(), news_online.class);
+
+                myIntent.putExtra("tag", "songram");
+                myIntent.putExtra("lang", "BAN");
+                myIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivityForResult(myIntent, 0);
+            }
+        });
+
+
 
 
         ds.setOnClickListener(new View.OnClickListener() {
@@ -188,6 +222,7 @@ public class News_online_fragment  extends Fragment {
                 Intent myIntent = new Intent(getContext(), news_online.class);
 
                 myIntent.putExtra("tag", "dailystar");
+                myIntent.putExtra("lang", "ENG");
                 myIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivityForResult(myIntent, 0);
             }
@@ -199,6 +234,7 @@ public class News_online_fragment  extends Fragment {
                 Intent myIntent = new Intent(getContext(), news_online.class);
 
                 myIntent.putExtra("tag", "dailysun");
+                myIntent.putExtra("lang", "ENG");
                 myIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivityForResult(myIntent, 0);
             }
@@ -210,10 +246,24 @@ public class News_online_fragment  extends Fragment {
                 Intent myIntent = new Intent(getContext(), news_online.class);
 
                 myIntent.putExtra("tag", "aljazeera");
+                myIntent.putExtra("lang", "ENG");
                 myIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivityForResult(myIntent, 0);
             }
         });
+
+        nyt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent myIntent = new Intent(getContext(), news_online.class);
+
+                myIntent.putExtra("tag", "nyt");
+                myIntent.putExtra("lang", "ENG");
+                myIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivityForResult(myIntent, 0);
+            }
+        });
+
 
         fp.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -221,6 +271,7 @@ public class News_online_fragment  extends Fragment {
                 Intent myIntent = new Intent(getContext(), news_online.class);
 
                 myIntent.putExtra("tag", "foreignpolicy");
+                myIntent.putExtra("lang", "ENG");
                 myIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivityForResult(myIntent, 0);
             }
@@ -232,6 +283,7 @@ public class News_online_fragment  extends Fragment {
                 Intent myIntent = new Intent(getContext(), news_online.class);
 
                 myIntent.putExtra("tag", "washpost");
+                myIntent.putExtra("lang", "ENG");
                 myIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivityForResult(myIntent, 0);
             }
@@ -243,6 +295,7 @@ public class News_online_fragment  extends Fragment {
                 Intent myIntent = new Intent(getContext(), news_online.class);
 
                 myIntent.putExtra("tag", "bdpratidin");
+                myIntent.putExtra("lang", "BAN");
                 myIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivityForResult(myIntent, 0);
             }

@@ -53,6 +53,7 @@ public class News_adapter extends  RecyclerView.Adapter<News_adapter.ViewHolder>
         this.newsList.addAll(news);
 
 
+
     }
 
     private static Activity unwrap(Context context) {
@@ -158,6 +159,7 @@ public class News_adapter extends  RecyclerView.Adapter<News_adapter.ViewHolder>
                         myIntent.putExtra("body", myListData.getBODY());
                         myIntent.putExtra("url", myListData.getURL());
                         myIntent.putExtra("id", position);
+                        myIntent.putExtra("lang", myListData.getLANG());
                         myIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 
                         ActivityOptionsCompat activityOptionsCompat = ActivityOptionsCompat.makeSceneTransitionAnimation((Activity) unwrap(view.getContext()),view.findViewById(R.id.topnews), "imageShared");
@@ -239,6 +241,7 @@ public class News_adapter extends  RecyclerView.Adapter<News_adapter.ViewHolder>
                         myIntent.putExtra("body", myListData.getBODY());
                         myIntent.putExtra("url", myListData.getURL());
                         myIntent.putExtra("id", position);
+                        myIntent.putExtra("lang", myListData.getLANG());
                         myIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 
                         ActivityOptionsCompat activityOptionsCompat = ActivityOptionsCompat.makeSceneTransitionAnimation((Activity) unwrap(view.getContext()),view.findViewById(R.id.topnews), "imageShared");
@@ -320,6 +323,7 @@ public class News_adapter extends  RecyclerView.Adapter<News_adapter.ViewHolder>
                         myIntent.putExtra("body", myListData.getBODY());
                         myIntent.putExtra("url", myListData.getURL());
                         myIntent.putExtra("id", position);
+                        myIntent.putExtra("lang", myListData.getLANG());
                         myIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 
                         ActivityOptionsCompat activityOptionsCompat = ActivityOptionsCompat.makeSceneTransitionAnimation((Activity) unwrap(view.getContext()),view.findViewById(R.id.topnews), "imageShared");

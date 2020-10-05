@@ -189,10 +189,13 @@ public class news_online extends AppCompatActivity {
 
 
                                 boolean b;
+                                final Intent intent = getIntent();
+                                String type = intent.getStringExtra("lang");
+
                                 if (newsList.get(position).getURL().isEmpty()) {
-                                    b = mDBHelper.insertData(newsList.get(position).getTITLE(), dataq, "empty");
+                                    b = mDBHelper.insertData(newsList.get(position).getTITLE(), dataq, "empty",type);
                                 } else
-                                    b = mDBHelper.insertData(newsList.get(position).getTITLE(), dataq, newsList.get(position).getURL());
+                                    b = mDBHelper.insertData(newsList.get(position).getTITLE(), dataq, newsList.get(position).getURL(),type);
                                 if (b == true) {
                                     Toasty.success(getApplicationContext(), "Done.", Toast.LENGTH_SHORT).show();
                                 } else {
@@ -235,6 +238,7 @@ public class news_online extends AppCompatActivity {
 
         final Intent intent = getIntent();
         String type = intent.getStringExtra("tag");
+        System.out.println(type);
 
         ConnectivityManager conMgr =  (ConnectivityManager)getSystemService(Context.CONNECTIVITY_SERVICE);
         @SuppressLint("MissingPermission") NetworkInfo netInfo = conMgr.getActiveNetworkInfo();
@@ -356,7 +360,8 @@ public class news_online extends AppCompatActivity {
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
-            }else if(urls[0].equals("i")){
+            }
+            else if(urls[0].equals("i")){
 
                 newsList.clear();
                 try {
@@ -416,7 +421,8 @@ public class news_online extends AppCompatActivity {
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
-            }else if(urls[0].equals("dailystar")){
+            }
+            else if(urls[0].equals("dailystar")){
                 newsList.clear();
 
                 try {
@@ -481,7 +487,8 @@ public class news_online extends AppCompatActivity {
                 } catch (Exception e) {
                     System.out.println(e.getMessage());
                 }
-            }else if(urls[0].equals("jugantor")){
+            }
+            else if(urls[0].equals("jugantor")){
 
                 newsList.clear();
                 try {
@@ -535,13 +542,14 @@ public class news_online extends AppCompatActivity {
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
-            }else if(urls[0].equals("janakantho")){
+            }
+            else if(urls[0].equals("janakantho")){
 
                 newsList.clear();
                 try {
 
-                    Document doc = Jsoup.connect("http://www.dailyjanakantha.com/editorial/").get();
-                    Elements links = doc.select("div.listDiv").select("a[href]");
+                    Document doc = Jsoup.connect("https://www.dailyjanakantha.com/editorial/").get();
+                    Elements links = doc.select("div[class=col-12 col-md-9]").select("a[href]");
                     List<Element> elements = new ArrayList<>();
                     //Iterate links and print link attributes.
                     for (Element link : links) {
@@ -553,16 +561,16 @@ public class news_online extends AppCompatActivity {
                     }
                     for (Element link:
                             elements) {
-                        Document docs = Jsoup.connect(link.attr("abs:href")).userAgent("Mozila").get();
+                        Document docs = Jsoup.connect(link.attr("abs:href")).get();
                         News news = new News();
                         news.setTITLE(docs.title());
                         // With the document fetched, we use JSoup's title() method to fetch the title
                         //Elements _ContentRegions =  docs.select("img.image-style-very-big-1");
 
-                        news.setURL("https://www.dailyjanakantha.com/files/201701/1485886687_JK-LOGO.jpg");
+                        news.setURL("https://www.dailyjanakantha.com/cloud-uploads/default/header-top.png");
                         docs.outputSettings(new Document.OutputSettings().prettyPrint(false));
                         docs.outputSettings().prettyPrint(true);
-                        Elements _ContentRegion =  docs.select("div.artContent p");
+                        Elements _ContentRegion =  docs.select("div[class=article-details mb-5] p");
 
 
                         StringBuilder ss = new StringBuilder();
@@ -582,7 +590,8 @@ public class news_online extends AppCompatActivity {
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
-            }else if(urls[0].equals("aljazeera")){
+            }
+            else if(urls[0].equals("aljazeera")){
                 newsList.clear();
                 try {
 
@@ -818,24 +827,24 @@ public class news_online extends AppCompatActivity {
                 newsList.clear();
                 try {
 
-                    Document doc = Jsoup.connect("http://www.dailynayadiganta.com/editorial/9").get();
+                    Document doc = Jsoup.connect("https://www.dailynayadiganta.com/editorial/9").get();
                     Elements links = doc.select("a[href]");
                     List<Element> elements = new ArrayList<>();
                     //Iterate links and print link attributes.
                     for (Element link : links) {
-                        if(!link.attr("abs:href").contains("http://www.dailynayadiganta.com/sub-editorial/9") && link.attr("href").contains("/sub-editorial/")){
+                        if(!link.attr("abs:href").contains("https://www.dailynayadiganta.com/editorial/9") && link.attr("href").contains("/sub-editorial/")){
                             elements.add(link);
                             //System.out.println(link.attr("abs:href"));
                         }else{
                             elements.remove(link);
                         }
                     }
-                    Document doc1 = Jsoup.connect("http://www.dailynayadiganta.com/opinion/10").get();
+                    Document doc1 = Jsoup.connect("https://www.dailynayadiganta.com/opinion/10").get();
                     Elements links1 = doc1.select("a[href]");
                     // List<Element> elements = new ArrayList<>();
                     //Iterate links and print link attributes.
                     for (Element link : links1) {
-                        if(!link.attr("abs:href").contains("http://www.dailynayadiganta.com/opinion/10") && link.attr("href").contains("/opinion/")){
+                        if(!link.attr("abs:href").contains("https://www.dailynayadiganta.com/opinion/10") && link.attr("href").contains("/opinion/")){
                             elements.add(link);
                             //System.out.println(link.attr("abs:href"));
                         }else{
@@ -846,7 +855,7 @@ public class news_online extends AppCompatActivity {
 
                     for (Element link:
                             elements) {
-                        Document docs = Jsoup.connect(link.attr("abs:href")).userAgent("Mozila").get();
+                        Document docs = Jsoup.connect(link.attr("abs:href")).get();
                         // With the document fetched, we use JSoup's title() method to fetch the title
                         News news = new News();
                         news.setTITLE(docs.title());
@@ -858,7 +867,13 @@ public class news_online extends AppCompatActivity {
 
                         Element image =  docs.select("div[class=image-holder margin-bottom-10]").first();
 
-                        news.setURL(image.getElementsByTag("img").attr("abs:src"));
+                        if(image==null){
+                            news.setURL("https://www.dailynayadiganta.com/resources/img/sitesetup/1_1.png");
+                        }else{
+                            news.setURL(image.getElementsByTag("img").attr("abs:src"));
+                        }
+
+
 
 
                         StringBuilder ss = new StringBuilder();
@@ -874,7 +889,8 @@ public class news_online extends AppCompatActivity {
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
-            }else if(urls[0].equals("dailysun")){
+            }
+            else if(urls[0].equals("dailysun")){
                 newsList.clear();
                 try {
 
@@ -926,7 +942,8 @@ public class news_online extends AppCompatActivity {
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
-            }else if(urls[0].equals("inquilab")){
+            }
+            else if(urls[0].equals("inquilab")){
                 newsList.clear();
                 try {
 
@@ -984,7 +1001,8 @@ public class news_online extends AppCompatActivity {
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
-            }else if(urls[0].equals("kalerkantho")){
+            }
+            else if(urls[0].equals("kalerkantho")){
                 newsList.clear();
                 try {
 
@@ -1045,6 +1063,174 @@ public class news_online extends AppCompatActivity {
                         newsList.add(news);
 
                         //newsList.add(news);
+                    }
+
+
+
+                    // In case of any IO errors, we want the messages written to the console
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+            else if(urls[0].equals("songbad")){
+                newsList.clear();
+                try {
+
+                    Document doc = Jsoup.connect("https://thesangbad.net/opinion/open-discussion/").get();
+                    Elements links = doc.select("div[class=left-page-contents]").select("a[href]");
+                    List<Element> elements = new ArrayList<>();
+                    //Iterate links and print link attributes.
+                    for (Element link : links) {
+
+                        if(link.attr("href").contains("/opinion/open-discussion/")){
+                            elements.add(link);
+                        }else{
+                            elements.remove(link);
+                        }
+                    }
+                    for (Element link:
+                            elements) {
+                        Document docs = Jsoup.connect(link.attr("abs:href")).get();
+                        News news = new News();
+                         news.setTITLE(docs.title());
+                        // System.out.println(docs.html());
+                        // With the document fetched, we use JSoup's title() method to fetch the title
+                        Element image =  docs.select("div[class=news-details] img").first();
+
+                        if(image==null){
+                             news.setURL("https://m.thesangbad.net/images/logo.png");
+                        }
+                        else {
+                            news.setURL(image.absUrl("src"));
+                        }
+
+                        Elements _ContentRegion =  docs.select("div[class=news-details] p");
+
+
+                        StringBuilder ss = new StringBuilder();
+                        for (Element ee : _ContentRegion){
+                            ss.append(ee.wholeText());
+                            ss.append("\n\n");
+                        }
+                         news.setBODY(ss.toString().trim());
+
+                        newsList.add(news);
+
+                    }
+
+
+
+                    // In case of any IO errors, we want the messages written to the console
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+            else if(urls[0].equals("songram")){
+                newsList.clear();
+                try {
+
+                    Document doc = Jsoup.connect("https://dailysangram.com/section/opinion").get();
+                    Elements links = doc.select("div[class=homeContent]").select("a[href]");
+                    List<Element> elements = new ArrayList<>();
+                    //Iterate links and print link attributes.
+                    for (Element link : links) {
+
+                        if(link.attr("href").contains("/post/")){
+                            elements.add(link);
+                        }else{
+                            elements.remove(link);
+                        }
+                    }
+                    for (Element link:
+                            elements) {
+                        Document docs = Jsoup.connect(link.attr("abs:href")).get();
+                        News news = new News();
+                        news.setTITLE(docs.title());
+                        // System.out.println(docs.html());
+                        System.out.println(docs.title());
+                        // With the document fetched, we use JSoup's title() method to fetch the title
+                        Element image =  docs.select("div[class=news-details] img").first();
+
+                        if(image==null){
+                            // System.out.println("https://www.bd-pratidin.com/assets/importent_images/og-logo.jpg");
+                             news.setURL("https://allbanglanewspaper.net/upload/2019/03/639661-the-daily-sangram.jpg");
+                        }
+                        else {
+                            news.setURL(image.absUrl("src"));
+                        }
+
+                        // news.setURL("https://www.dailyjanakantha.com/files/201701/1485886687_JK-LOGO.jpg");
+
+                        Elements _ContentRegion =  docs.select("div[class=postDetails] p");
+
+
+                        StringBuilder ss = new StringBuilder();
+                        for (Element ee : _ContentRegion){
+                            ss.append(ee.wholeText());
+                            ss.append("\n\n");
+                        }
+                        //System.out.println(ss.toString().trim());
+                         news.setBODY(ss.toString().trim());
+
+                        newsList.add(news);
+
+                    }
+
+
+
+                    // In case of any IO errors, we want the messages written to the console
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+            else if(urls[0].equals("nyt")){
+                newsList.clear();
+                try {
+
+                    Document doc = Jsoup.connect("https://www.nytimes.com/section/opinion/editorials").get();
+                    Elements links = doc.select("div[class=css-13mho3u]").select("a[href]");
+                    List<Element> elements = new ArrayList<>();
+                    //Iterate links and print link attributes.
+                    for (Element link : links) {
+
+                        if(link.attr("href").contains("/opinion/")){
+                            elements.add(link);
+                        }else{
+                            elements.remove(link);
+                        }
+                    }
+                    for (Element link:
+                            elements) {
+                        Document docs = Jsoup.connect(link.attr("abs:href")).get();
+                        News news = new News();
+                         news.setTITLE(docs.title());
+                        // System.out.println(docs.html());
+                        System.out.println(docs.title());
+                        // With the document fetched, we use JSoup's title() method to fetch the title
+                        Element image =  docs.select("div[class=css-1a48zt4 ehw59r15] img").first();
+
+                        if(image==null){
+                            // System.out.println("https://www.bd-pratidin.com/assets/importent_images/og-logo.jpg");
+                             news.setURL("https://www.bd-pratidin.com/assets/importent_images/og-logo.jpg");
+                        }
+                        else {
+                            news.setURL(image.absUrl("src"));
+                        }
+
+                        // news.setURL("https://www.dailyjanakantha.com/files/201701/1485886687_JK-LOGO.jpg");
+
+                        Elements _ContentRegion =  docs.select("section[class=meteredContent css-1r7ky0e] p");
+
+
+                        StringBuilder ss = new StringBuilder();
+                        for (Element ee : _ContentRegion){
+                            ss.append(ee.wholeText());
+                            ss.append("\n\n");
+                        }
+                          news.setBODY(ss.toString().trim());
+
+                        newsList.add(news);
+
                     }
 
 
@@ -1130,10 +1316,12 @@ public class news_online extends AppCompatActivity {
 
 
                                 boolean b;
+                                final Intent intent = getIntent();
+                                String type = intent.getStringExtra("lang");
                                 if (newsList.get(position).getURL().isEmpty()) {
-                                    b = mDBHelper.insertData(newsList.get(position).getTITLE(), dataq, "empty");
+                                    b = mDBHelper.insertData(newsList.get(position).getTITLE(), dataq, "empty",type);
                                 } else
-                                    b = mDBHelper.insertData(newsList.get(position).getTITLE(), dataq, newsList.get(position).getURL());
+                                    b = mDBHelper.insertData(newsList.get(position).getTITLE(), dataq, newsList.get(position).getURL(),type);
                                 if (b == true) {
                                     Toasty.success(getApplicationContext(), "Done.", Toast.LENGTH_SHORT).show();
                                 } else {

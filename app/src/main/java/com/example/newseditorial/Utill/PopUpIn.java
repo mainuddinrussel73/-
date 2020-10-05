@@ -259,9 +259,9 @@ public class  PopUpIn {
 
             boolean b1;
             if (news.getURL().isEmpty()) {
-                b1 = mDBHelper.insertData(news.getTITLE(), dataq, "empty");
+                b1 = mDBHelper.insertData(news.getTITLE(), dataq, "empty",news.getLANG());
             } else
-                b1 = mDBHelper.insertData(news.getTITLE(), dataq, news.getURL());
+                b1 = mDBHelper.insertData(news.getTITLE(), dataq, news.getURL(),news.getLANG());
             if (b1 == true) {
                 Toasty.success(Coontext, "Done.", Toast.LENGTH_SHORT).show();
             } else {

@@ -117,7 +117,8 @@ public class News_fragment extends Fragment  {
                 word.setTITLE(cursor[0].getString(1));
                 word.setBODY(cursor[0].getString(2));
                 word.setISREAD( cursor[0].getInt(3));
-                word.setURL(cursor[0].getString(4));
+                word.setLANG( cursor[0].getString(4));
+                word.setURL(cursor[0].getString(5));
 
                 newsList.add(word);
                 //  i++;
@@ -126,6 +127,7 @@ public class News_fragment extends Fragment  {
                 //}
 
 
+                System.out.println(word.toString());
 
             }
 
@@ -145,6 +147,7 @@ public class News_fragment extends Fragment  {
         }
 
         Collections.sort(newsList,Collections.reverseOrder());
+
 
         adapter = new News_adapter(getActivity(),newsList);
 

@@ -209,9 +209,9 @@ public class add_news extends AppCompatActivity {
 
                     boolean b;
                     if (url.getText().toString().isEmpty()) {
-                        b = mDBHelper.insertData(title.getText().toString(), dataq, "empty");
+                        b = mDBHelper.insertData(title.getText().toString(), dataq, "empty","BAN");
                     } else
-                        b = mDBHelper.insertData(title.getText().toString(), dataq, url.getText().toString());
+                        b = mDBHelper.insertData(title.getText().toString(), dataq, url.getText().toString(),"BAN");
                     if (b == true) {
                         Toasty.success(getApplicationContext(), "Done.", Toast.LENGTH_SHORT).show();
                         Intent myIntent = new Intent(v.getContext(), MainActivity.class);

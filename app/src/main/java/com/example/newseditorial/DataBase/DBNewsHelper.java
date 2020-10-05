@@ -23,6 +23,7 @@ public class DBNewsHelper extends SQLiteOpenHelper {
     public static final String BODY = "BODY";
     public static final String URL = "URL";
     public static final String ISREAD = "ISREAD";
+    public static final String LANG = "LANG";
     static String DB_PATH = "";
     private SQLiteDatabase mDataBase;
     private Context mContext;
@@ -94,6 +95,7 @@ public class DBNewsHelper extends SQLiteOpenHelper {
                 + TITLE + " TEXT,"
                 + BODY + " TEXT,"
                 + ISREAD + " INTEGER,"
+                + LANG + " TEXT,"
                 + URL + " URL" + ")";
         db.execSQL(CREATE_CONTACTS_TABLE);
     }
@@ -104,12 +106,14 @@ public class DBNewsHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public boolean insertData(String title, String body, String url) {
+    public boolean insertData(String title, String body, String url,String lang) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put(TITLE, title);
         contentValues.put(BODY, body);
+        contentValues.put(LANG, lang);
         contentValues.put(URL, url);
+
         long result = db.insert(TABLE_NAME, null, contentValues);
         return result != -1;
     }
